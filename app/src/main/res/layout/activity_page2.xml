@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Page2Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/QuestionBlock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView_q_2"
+                style="@style/QuestionLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/q2_label" />
+
+            <ImageView
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/glass_half_water" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_q_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    style="@style/QuestionOptionText"
+                    android:id="@+id/radioButton_201-1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/q2_101_1" />
+
+                <RadioButton
+                    style="@style/QuestionOptionText"
+                    android:id="@+id/radioButton_201-2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/q2_101_2" />
+
+                <RadioButton
+                    style="@style/QuestionOptionText"
+                    android:id="@+id/radioButton_201-3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/q2_101_3" />
+
+                <RadioButton
+                    style="@style/QuestionOptionText"
+                    android:id="@+id/radioButton_201-4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/q2_101_4" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/QuestionBlock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button_next1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nextpage1" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

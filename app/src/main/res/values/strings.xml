@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">DbTest02</string>
+    <string name="welcome">Welcome</string>
+    <string name="begin">to begin, tap the start button</string>
+    <string name="start">Start</string>
+    <string name="page">Page</string>
+    <string name="finish">Finsh</string>
+    <string name="male_or_female">Are you male or female?</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="q2_label">How would you perceive the water level below? Please answer carefully as this will affect your final results.</string>
+    <string name="q2_101_1">Half full</string>
+    <string name="q2_101_2">Half empty</string>
+    <string name="q2_101_3">Around 50% of water</string>
+    <string name="q2_101_4">Don\'t know</string>
+    <string name="nextpage1">next</string>
+    <string name="nextpage2">next</string>
+    <string name="get_results">get results</string>
+</resources>
