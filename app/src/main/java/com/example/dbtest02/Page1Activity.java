@@ -2,6 +2,7 @@ package com.example.dbtest02;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -97,7 +98,29 @@ public class Page1Activity extends AppCompatActivity {
         ContentValues values = new ContentValues();
         values.put(AnswerContract.AnswerEntry.COLUMN_NAME_Q1, answer);
 
-        long newRowId = db.insert(AnswerContract.AnswerEntry.TABLE_NAME, null, values);
+        //long newRowId = db.insert(AnswerContract.AnswerEntry.TABLE_NAME, null, values);
+
+        int lastRowId = -1;
+
+        //String query = "SELECT _id FROM answers WHERE _id = (SELECT MAX(_id) FROM answers)";
+        //String query = "SELECT * FROM answers WHERE _id = (SELECT max(_id) FROM answers) order by _id desc limit 1";
+        String query = "SELECT * FROM answers ORDER BY _id DESC LIMIT 1";
+        Cursor cursor = null;
+        try {
+            cursor = mDbHelper.getReadableDatabase().rawQuery(query, null);
+            cursor.moveToFirst();
+            lastRowId = cursor.getInt(cursor.getColumnIndex(AnswerContract.AnswerEntry._ID));
+            /*while (cursor.moveToNext()) {
+                lastRowId = cursor.getColumnIndex(AnswerContract.AnswerEntry._ID);
+                //Toast.makeText(this, "Last Row = " + cursor.getColumnIndex(AnswerContract.AnswerEntry.COLUMN_NAME_DEBUG), Toast.LENGTH_SHORT).show();
+            }*/
+        } finally {
+            cursor.close();
+        }
+
+        Toast.makeText(this, "Last Row = " + lastRowId, Toast.LENGTH_SHORT).show();
+
+        db.update(AnswerContract.AnswerEntry.TABLE_NAME, values, "_id=" + lastRowId, null);
 
         mDbHelper.close();
     }

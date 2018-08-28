@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     // https://android.jlelse.eu/architecture-patterns-in-android-abf99f2b6f70
     // https://www.androidhive.info/2013/09/android-sqlite-database-with-multiple-tables/
+    // https://google-developer-training.gitbooks.io/android-developer-fundamentals-course-concepts/content/en/Unit%204/101_c_sqlite_database.html
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +40,24 @@ public class MainActivity extends AppCompatActivity {
                 startPage1();
             }
         });
+
+        Button btnResults = findViewById(R.id.button_results);
+
+        btnResults.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startResults();
+            }
+        });
     }
 
     private void startPage1() {
         Intent intent = new Intent(MainActivity.this, Page1Activity.class);
+        startActivity(intent);
+    }
+
+    private void startResults() {
+        Intent intent = new Intent(MainActivity.this, ResultsActivity.class);
         startActivity(intent);
     }
 }

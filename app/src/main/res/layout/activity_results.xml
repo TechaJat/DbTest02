@@ -6,9 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".ResultsActivity">
 
-    <android.support.v7.widget.RecyclerView
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="vertical" />
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/row_padding_vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/row_padding_vertical" >
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:text="ID" />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:text="Q1" />
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:textSize="40sp"
+            android:text="Q2" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_below="@id/linearLayout"/>
 
 </RelativeLayout>

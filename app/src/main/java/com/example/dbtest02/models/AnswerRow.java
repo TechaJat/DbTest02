@@ -28,6 +28,10 @@ public class AnswerRow {
         return answers;
     }
 
+    public int getAnswer(int position){
+        return answers.get(position);
+    }
+
     public void addQuestion(String question) {
         this.questions.add(question);
     }
