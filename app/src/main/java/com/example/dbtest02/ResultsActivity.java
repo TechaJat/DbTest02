@@ -72,13 +72,13 @@ public class ResultsActivity extends AppCompatActivity {
         String query = "SELECT * FROM ANSWERS";
         Cursor cursor = null;
 
-
         try {
             cursor = db.rawQuery(query, null);
 
             while(cursor.moveToNext()) {
                 // fill in the arraylist please
                 answerRow = new AnswerRow();
+                answerRow.setId(cursor.getInt(cursor.getColumnIndex(AnswerContract.AnswerEntry._ID)));
                 answerRow.addAnswer(cursor.getInt(cursor.getColumnIndex(AnswerContract.AnswerEntry.COLUMN_NAME_Q1)));
                 answerRow.addAnswer(cursor.getInt(cursor.getColumnIndex(AnswerContract.AnswerEntry.COLUMN_NAME_Q2)));
                 answerRows.add(answerRow);

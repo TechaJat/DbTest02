@@ -40,7 +40,7 @@ public class AnswersAdapter extends RecyclerView.Adapter<AnswersAdapter.MyViewHo
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         AnswerRow answerRow = answersList.get(position);
-        holder.answerId.setText(Integer.toString(position));
+        holder.answerId.setText(Integer.toString(answerRow.getId()));
         holder.answer1.setText(Integer.toString(answerRow.getAnswer(0)));
         holder.answer2.setText(Integer.toString(answerRow.getAnswer(1)));
     }

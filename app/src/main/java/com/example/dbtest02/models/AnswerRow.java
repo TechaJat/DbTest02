@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class AnswerRow {
     // Answers row for a session
 
+    private int id;
     private ArrayList<String> questions;
     private ArrayList<Integer> answers;
 
@@ -28,6 +29,10 @@ public class AnswerRow {
         return answers;
     }
 
+    public int getId(){
+        return this.id;
+    }
+
     public int getAnswer(int position){
         return answers.get(position);
     }
@@ -38,6 +43,10 @@ public class AnswerRow {
 
     public void addAnswer(int answer) {
         this.answers.add(answer);
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setQuestions(ArrayList<String> questions) {
